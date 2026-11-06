@@ -1,0 +1,10 @@
+# OpenCode local configuration
+.opencode/
+
+# IDEs
+.idea/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
