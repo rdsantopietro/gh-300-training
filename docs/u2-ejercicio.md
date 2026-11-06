@@ -1,4 +1,4 @@
-# Ejercicio U2 — Del prompt básico al prompt optimizado sobre el alta de usuario
+# Ejercicio U2 — Del prompt básico al prompt optimizado sobre `existeEmail` en RepositorioUsuarios
 
 ## 1. Objetivo
 
@@ -14,7 +14,7 @@ Referencia: [Unidad 2, Fundamentos de la ingeniería de solicitudes y procedimie
 |---|---|
 | Proyecto Java 25 con Gradle Wrapper, sin frameworks ni dependencias de producción. | `build.gradle` (toolchain 25, solo JUnit 5 en `testImplementation`), `gradlew.bat` |
 | Arquitectura MVC por consola. | `src/main/java/com/ejemplo/usuarios/Main.java` conecta `RepositorioUsuarios`, `VistaConsola` y `UsuarioController` |
-| El alta de usuario **ya existe**. | `UsuarioController.java:38-47`: `private void alta()` lee nombre/email, rechaza vacíos, llama a `repositorio.crear(...)` y muestra `"Usuario N creado."` |
+| El método `existeEmail` **no existe aún**. | `RepositorioUsuarios.java:18-42` tiene `crear`, `listar`, `buscar`, `actualizar`, `eliminar`, pero no `existeEmail`. |
 | El modelo es un `record` inmutable. | `Usuario.java:6`: `public record Usuario(int id, String nombre, String email)` con validación de no vacío en el constructor compacto |
 | El repositorio es en memoria. | `RepositorioUsuarios.java:15-16`: `LinkedHashMap<Integer, Usuario>` y `siguienteId` |
 | API real del repositorio: `crear`, `listar`, `buscar`, `actualizar`, `eliminar`. | `RepositorioUsuarios.java:18-42` |
@@ -93,7 +93,7 @@ Como vimos en esta unidad, las 4S ayudan a enfocar y contextualizar una solicitu
 **Prompt exacto:**
 
 ```text
-@workspace Implementá el alta de usuario en el ABM.
+@workspace Implementá el método `existeEmail(String email)` en la clase `RepositorioUsuarios`. Debe normalizar con `trim()`, comparar sin distinguir mayúsculas y lanzar `IllegalArgumentException` si recibe `null`. No modificar ninguna otra firma existente.
 ```
 
 Guarda la respuesta completa en `.tmp/u2/baseline-respuesta.md`. Anota debajo, con tus propias palabras, qué archivos o APIs mencionó, si reconoció el alta existente y qué pasó al aplicar su propuesta y ejecutar las pruebas. No hace falta completar una ficha ni producir un resultado concreto.
@@ -122,7 +122,7 @@ ROL
 Actuá como desarrollador Java senior responsable de mantener este repositorio.
 
 TAREA ÚNICA
-Implementá el alta de usuario del ABM existente como un incremento sobre el método `alta()` ya presente, sin reescribir el ABM ni crear una segunda ruta de alta.
+Implementá el método `existeEmail(String email)` en `RepositorioUsuarios` como un nuevo método, respetando el scope permitido: normalizar con `trim()`, comparar sin distinguir mayúsculas y lanzar `IllegalArgumentException` si recibe `null`. No modificar firmas existentes.
 
 CONTEXTO VERIFICADO
 - Java 25, Gradle Wrapper, JUnit 5. Sin frameworks ni dependencias de producción.
