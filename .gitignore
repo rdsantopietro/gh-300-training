@@ -12,3 +12,19 @@ build/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Secretos y datos locales (auditoría Unidad 4)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.jks
+secrets/
+local.properties
+
+# Evidencia temporal de pruebas de privacidad
+.tmp/
+*.tmp
+*.log
