@@ -5,6 +5,10 @@
 .idea/
 .vscode/
 
+# Gradle
+.gradle/
+build/
+
 # OS files
 .DS_Store
 Thumbs.db
